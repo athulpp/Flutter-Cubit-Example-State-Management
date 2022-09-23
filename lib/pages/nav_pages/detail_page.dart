@@ -2,6 +2,7 @@ import 'package:bloc/misc/colors.dart';
 import 'package:bloc/widgets/app_buttons.dart';
 import 'package:bloc/widgets/app_large_text.dart';
 import 'package:bloc/widgets/app_text.dart';
+import 'package:bloc/widgets/responsive_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,6 +16,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   int gottenStars = 4;
+  int selecteIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +78,7 @@ class _DetailPageState extends State<DetailPage> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(children: [
@@ -84,7 +86,7 @@ class _DetailPageState extends State<DetailPage> {
                           Icons.location_on,
                           color: AppColors.mainColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         AppText(
@@ -124,20 +126,83 @@ class _DetailPageState extends State<DetailPage> {
                         color: Colors.black.withOpacity(0.8),
                         size: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       AppText(
                         text: 'Number of people in your group',
                         color: AppColors.mainTextColor,
                       ),
+                      const SizedBox(height: 10),
                       Wrap(
                         children: List.generate(5, (index) {
-                          return AppButton(color: ,size: 50,);
+                          return InkWell(
+                            onTap: () {
+                              setState(() {
+                                selecteIndex = index;
+                                print(selecteIndex);
+                              });
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              child: AppButton(
+                                color: selecteIndex == index
+                                    ? Colors.white
+                                    : Colors.black,
+                                size: 50,
+                                backgroundColor: selecteIndex == index
+                                    ? Colors.black
+                                    : AppColors.buttonBackground,
+                                borderColor: selecteIndex == index
+                                    ? Colors.black
+                                    : AppColors.buttonBackground,
+                                text: (index + 1).toString(),
+                              ),
+                            ),
+                          );
                         }),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      AppLargeText(
+                        text: "Description",
+                        color: Colors.black.withOpacity(0.8),
+                        size: 20,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      AppText(
+                        text:
+                            "You must go for travel. Traveling helps get ride of pressure. Go to the moutains to see the nature",
+                        color: AppColors.mainTextColor,
                       )
                     ],
                   ),
+                )),
+            Positioned(
+                bottom: 20,
+                left: 20,
+                right: 20,
+                child: Row(
+                  children: [
+                    AppButton(
+                        color: AppColors.textColor2,
+                        backgroundColor: Colors.white,
+                        size: 60,
+                        borderColor: AppColors.textColor2,
+                        isIcon: true,
+                        icon: Icons.favorite_border),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    ResponsiveButton(
+                      isResponsive: true,
+                    )
+                  ],
                 ))
           ],
         ),
