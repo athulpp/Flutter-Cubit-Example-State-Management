@@ -1,8 +1,9 @@
-import 'package:bloc/misc/colors.dart';
-import 'package:bloc/widgets/app_buttons.dart';
-import 'package:bloc/widgets/app_large_text.dart';
-import 'package:bloc/widgets/app_text.dart';
-import 'package:bloc/widgets/responsive_button.dart';
+
+import 'package:bloctimes/misc/colors.dart';
+import 'package:bloctimes/widgets/app_buttons.dart';
+import 'package:bloctimes/widgets/app_large_text.dart';
+import 'package:bloctimes/widgets/app_text.dart';
+import 'package:bloctimes/widgets/responsive_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

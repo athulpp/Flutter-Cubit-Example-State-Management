@@ -1,6 +1,5 @@
-import 'package:bloc/pages/nav_pages/detail_page.dart';
-import 'package:bloc/pages/nav_pages/main_page.dart';
-import 'package:bloc/pages/welcome_page.dart';
+
+import 'package:bloctimes/pages/nav_pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

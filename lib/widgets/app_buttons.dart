@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bloc/misc/colors.dart';
-import 'package:bloc/widgets/app_text.dart';
+
+import 'package:bloctimes/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {

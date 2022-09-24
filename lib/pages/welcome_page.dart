@@ -1,7 +1,8 @@
-import 'package:bloc/misc/colors.dart';
-import 'package:bloc/widgets/app_large_text.dart';
-import 'package:bloc/widgets/app_text.dart';
-import 'package:bloc/widgets/responsive_button.dart';
+
+import 'package:bloctimes/misc/colors.dart';
+import 'package:bloctimes/widgets/app_large_text.dart';
+import 'package:bloctimes/widgets/app_text.dart';
+import 'package:bloctimes/widgets/responsive_button.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {

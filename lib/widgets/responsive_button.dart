@@ -1,5 +1,6 @@
-import 'package:bloc/misc/colors.dart';
-import 'package:bloc/widgets/app_text.dart';
+
+import 'package:bloctimes/misc/colors.dart';
+import 'package:bloctimes/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveButton extends StatelessWidget {
