@@ -13,6 +13,7 @@ class DataServices {
     try {
       if (response.statusCode == 200) {
         List<dynamic> list = json.decode(response.body);
+        print(list);
         return list.map((e) => DataModel.fromJson(e)).toList();
       } else {
         return <DataModel>[];

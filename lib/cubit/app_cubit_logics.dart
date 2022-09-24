@@ -1,6 +1,8 @@
 import 'package:bloctimes/cubit/app_cubit.dart';
 import 'package:bloctimes/cubit/app_cubit_state.dart';
+import 'package:bloctimes/pages/nav_pages/detail_page.dart';
 import 'package:bloctimes/pages/nav_pages/home_page.dart';
+import 'package:bloctimes/pages/nav_pages/main_page.dart';
 import 'package:bloctimes/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,8 +22,11 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
         if (state is WelcomeState) {
           return WelcomePage();
         }
+        if (state is DetailState) {
+          return DetailPage();
+        }
         if (state is LoadedState) {
-          return HomePage();
+          return MainPage();
         }
         if (state is LoadingState) {
           return Center(
