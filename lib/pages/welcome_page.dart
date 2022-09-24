@@ -1,9 +1,10 @@
-
+import 'package:bloctimes/cubit/app_cubit.dart';
 import 'package:bloctimes/misc/colors.dart';
 import 'package:bloctimes/widgets/app_large_text.dart';
 import 'package:bloctimes/widgets/app_text.dart';
 import 'package:bloctimes/widgets/responsive_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WelcomePage extends StatefulWidget {
   WelcomePage({Key? key}) : super(key: key);
@@ -60,8 +61,20 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(
                           height: 40,
                         ),
-                        ResponsiveButton(
-                          width: 120,
+                        GestureDetector(
+                          onTap: () {
+                            BlocProvider.of<AppCubit>(context).getData();
+                          },
+                          child: Container(
+                            width: 200,
+                            child: Row(
+                              children: [
+                                ResponsiveButton(
+                                  width: 120,
+                                ),
+                              ],
+                            ),
+                          ),
                         )
                       ],
                     ),

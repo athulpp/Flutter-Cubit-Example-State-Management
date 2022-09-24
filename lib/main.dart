@@ -1,6 +1,9 @@
-
+import 'package:bloctimes/cubit/app_cubit.dart';
+import 'package:bloctimes/cubit/app_cubit_logics.dart';
 import 'package:bloctimes/pages/nav_pages/detail_page.dart';
+import 'package:bloctimes/services/data_servixes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: DetailPage());
+        home: BlocProvider<AppCubit>(
+          create: (context) => AppCubit(data: DataServices()),
+          child: AppCubitLogics(),
+        ));
   }
 }
